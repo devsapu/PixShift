@@ -44,6 +44,16 @@ This project is configured with BMAD Method v4 for AI-driven development.
 - Greenfield: `greenfield-fullstack.yaml`, `greenfield-service.yaml`, `greenfield-ui.yaml`
 - Brownfield: `brownfield-fullstack.yaml`, `brownfield-service.yaml`, `brownfield-ui.yaml`
 
+## Documentation
+
+📚 **Master Documentation Index:** [docs/INDEX.md](docs/INDEX.md) - Complete index of all project documentation
+
+The master index provides:
+- Quick navigation to all documents
+- Document descriptions and status
+- Role-based navigation guides
+- Cross-references between documents
+
 ## Project Structure
 
 ```
@@ -55,9 +65,10 @@ PixShift/
 │   ├── workflows/       # Workflow definitions
 │   └── core-config.yaml # Project configuration
 ├── docs/                # Project documentation (created during development)
+│   ├── INDEX.md        # Master documentation index
 │   ├── prd/            # Sharded PRD epics
 │   ├── architecture/        # Sharded architecture docs
-│   ├── stories/       # User stories
+│   ├── stories/       # User stories (33 stories)
 │   └── qa/            # QA documentation
 └── README.md           # This file
 ```
