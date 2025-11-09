@@ -1,0 +1,23 @@
+# SMS OTP Configuration
+# This file contains configuration for SMS OTP authentication
+
+provider:
+  type: "twilio"  # Options: "twilio"
+  
+twilio:
+  accountSid: "${TWILIO_ACCOUNT_SID}"  # Loaded from environment variable
+  authToken: "${TWILIO_AUTH_TOKEN}"  # Loaded from environment variable
+  phoneNumber: "${TWILIO_PHONE_NUMBER}"  # Loaded from environment variable
+  apiUrl: "https://api.twilio.com/2010-04-01"
+
+otp:
+  length: 6
+  expiration: 300  # 5 minutes in seconds
+  maxAttempts: 3
+  resendCooldown: 60  # 1 minute in seconds
+  allowedChars: "0123456789"  # Numeric only
+
+message:
+  template: "Your PixShift verification code is: {code}. Valid for 5 minutes."
+  from: "${TWILIO_PHONE_NUMBER}"
+

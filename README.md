@@ -1,5 +1,144 @@
 # PixShift
 
+Image transformation website using Gemini API. Transform your images with AI-powered transformations.
+
+## Features
+
+- 🖼️ Image upload and validation
+- ✨ AI-powered image transformations using Gemini API
+- 🔐 Multiple authentication methods (Gmail OAuth, Facebook OAuth, SMS OTP)
+- 💳 Freemium billing system with payment integration
+- 👤 User profiles and usage tracking
+- 🛠️ Admin dashboard for management
+- 🧹 Automatic image cleanup and deletion
+
+## Tech Stack
+
+- **Framework:** Next.js 14+ (App Router)
+- **Language:** TypeScript
+- **Database:** PostgreSQL with Prisma ORM
+- **Styling:** Tailwind CSS
+- **Authentication:** NextAuth.js
+- **Storage:** AWS S3 or Local filesystem
+- **Payment:** Stripe (primary), PayPal (optional)
+- **SMS:** Twilio
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+ LTS
+- PostgreSQL 14+
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd PixShift
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Set up environment variables:
+```bash
+cp .env.example .env
+# Edit .env with your configuration
+```
+
+4. Set up the database:
+```bash
+# Generate Prisma client
+npm run db:generate
+
+# Run migrations
+npm run db:migrate
+```
+
+5. Start the development server:
+```bash
+npm run dev
+```
+
+6. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+### Health Check
+
+The application includes a health check endpoint:
+- **GET** `/api/health` - Returns application health status
+
+## Project Structure
+
+```
+PixShift/
+├── src/
+│   ├── app/              # Next.js App Router pages
+│   │   ├── api/          # API routes
+│   │   └── (auth)/       # Authentication routes
+│   ├── components/       # React components
+│   ├── services/         # Business logic services
+│   └── utils/            # Utility functions
+├── prisma/               # Database schema and migrations
+├── config/                # Configuration files (YAML)
+├── docs/                  # Project documentation
+└── public/                # Static assets
+```
+
+## Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm run db:generate` - Generate Prisma client
+- `npm run db:migrate` - Run database migrations
+- `npm run db:studio` - Open Prisma Studio
+
+## Environment Variables
+
+See `.env.example` for all required environment variables.
+
+Key variables:
+- `DATABASE_URL` - PostgreSQL connection string
+- `GEMINI_API_KEY` - Gemini API key
+- `NEXTAUTH_SECRET` - NextAuth.js secret
+- `IMAGE_STORAGE_TYPE` - 's3' or 'local'
+- `STRIPE_SECRET_KEY` - Stripe API key (for payments)
+
+## Documentation
+
+📚 **Master Documentation Index:** [docs/INDEX.md](docs/INDEX.md)
+
+- **PRD:** [docs/prd.md](docs/prd.md)
+- **Architecture:** [docs/architecture.md](docs/architecture.md)
+- **Stories:** [docs/stories/](docs/stories/)
+- **Implementation Checklist:** [docs/IMPLEMENTATION_CHECKLIST.md](docs/IMPLEMENTATION_CHECKLIST.md)
+
+## Development
+
+### Code Quality
+
+- TypeScript strict mode enabled
+- ESLint configured with TypeScript rules
+- Prettier for code formatting
+
+### Testing
+
+```bash
+# Run tests (when implemented)
+npm test
+```
+
+## License
+
+[Add your license here]
+
+---
+
 Project using BMAD Method (Build-Measure-Analyze-Deploy) framework.
 
 ## BMAD Method Setup

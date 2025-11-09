@@ -1,0 +1,45 @@
+# Pricing Tiers Configuration
+# This file defines the available pricing tiers and their features
+
+tiers:
+  free:
+    name: "Free"
+    description: "Basic tier with limited transformations"
+    features:
+      - maxTransformations: 5
+      - transformationsPerMonth: 5
+      - imageSizeLimit: 10  # MB
+      - supportedFormats: ["JPG", "PNG", "WebP"]
+    pricing:
+      model: "free"
+      amount: 0
+      currency: "USD"
+  
+  basic:
+    name: "Basic"
+    description: "Pay-per-use pricing model"
+    features:
+      - maxTransformations: -1  # Unlimited
+      - transformationsPerMonth: -1  # Unlimited
+      - imageSizeLimit: 10  # MB
+      - supportedFormats: ["JPG", "PNG", "WebP"]
+    pricing:
+      model: "pay-per-use"
+      amount: 0.50  # Per transformation
+      currency: "USD"
+  
+  premium:
+    name: "Premium"
+    description: "Monthly subscription with unlimited transformations"
+    features:
+      - maxTransformations: -1  # Unlimited
+      - transformationsPerMonth: -1  # Unlimited
+      - imageSizeLimit: 20  # MB
+      - supportedFormats: ["JPG", "PNG", "WebP", "GIF"]
+    pricing:
+      model: "monthly"
+      amount: 9.99  # Per month
+      currency: "USD"
+
+defaultTier: "free"
+

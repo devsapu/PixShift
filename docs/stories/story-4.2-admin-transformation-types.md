@@ -2,7 +2,7 @@
 
 **Epic:** Epic 4: Admin Features & Dashboard  
 **Story ID:** 4.2  
-**Status:** Pending  
+**Status:** Completed  
 **Estimated Time:** 2-4 hours
 
 ---

@@ -1,0 +1,27 @@
+# Gemini API Configuration
+# This file contains configuration for the Gemini API integration
+
+api:
+  key: "${GEMINI_API_KEY}"  # Loaded from environment variable
+  endpoint: "https://generativelanguage.googleapis.com/v1beta"
+  model: "gemini-pro-vision"
+  
+timeout:
+  request: 30000  # 30 seconds in milliseconds
+  connection: 10000  # 10 seconds in milliseconds
+
+retry:
+  maxAttempts: 4
+  backoff:
+    initial: 1000  # 1 second
+    multiplier: 2  # Exponential backoff: 1s, 2s, 4s, 8s
+    max: 8000  # Maximum 8 seconds
+
+rateLimit:
+  requestsPerMinute: 60
+  requestsPerDay: 1000
+
+prompt:
+  systemMessage: "You are an AI image transformation assistant. Transform images according to user requests."
+  maxTokens: 4096
+

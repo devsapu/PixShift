@@ -1,0 +1,23 @@
+# Payment Gateway Configuration
+# This file contains configuration for payment gateways
+
+gateway:
+  type: "stripe"  # Options: "stripe", "paypal"
+  primary: "stripe"
+  
+stripe:
+  enabled: true
+  secretKey: "${STRIPE_SECRET_KEY}"  # Loaded from environment variable
+  publishableKey: "${STRIPE_PUBLISHABLE_KEY}"  # Loaded from environment variable
+  webhookSecret: "${STRIPE_WEBHOOK_SECRET}"  # Loaded from environment variable
+  webhookEndpoint: "/api/webhooks/stripe"
+  currency: "USD"
+  apiVersion: "2023-10-16"
+  
+paypal:
+  enabled: false  # Set to true to enable PayPal
+  clientId: "${PAYPAL_CLIENT_ID}"  # Loaded from environment variable
+  clientSecret: "${PAYPAL_CLIENT_SECRET}"  # Loaded from environment variable
+  mode: "sandbox"  # Options: "sandbox", "live"
+  currency: "USD"
+
